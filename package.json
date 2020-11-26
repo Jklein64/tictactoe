@@ -4,7 +4,7 @@
     "main": "./server/index.js",
     "license": "MIT",
     "scripts": {
-        "build": "ROOT=\"$(pwd)\"; cd ./server; npm run build; cd $ROOT; cd ./client; npm run build; cd $ROOT",
+        "build": "ROOT=\"$(pwd)\"; cd ./server; npm install; npm run build; cd $ROOT; cd ./client; npm install; npm run build; cd $ROOT",
         "start": "npm run build; cd ./server; npm run start"
     }
 }
