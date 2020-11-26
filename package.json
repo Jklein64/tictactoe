@@ -1,6 +1,9 @@
 {
     "name": "tictactoe",
     "version": "1.0.0",
+    "engines": {
+        "node": "13.x"
+    },
     "main": "./server/index.js",
     "license": "MIT",
     "scripts": {
