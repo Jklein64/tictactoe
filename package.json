@@ -8,6 +8,6 @@
     "scripts": {
         "build": "cd client && yarn install && yarn run build",
         "postinstall": "npm install --prefix server && npm install --prefix client",
-        "start": "node ./server"
+        "start": "node ./server/dist/index.js"
     }
 }
