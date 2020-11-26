@@ -1,0 +1,51 @@
+.base {
+    --color: grey;
+    border: 1px solid var(--color);
+    background: none;
+    padding: 8px 16px;
+    color: whitesmoke;
+    font-size: 24px;
+    position: relative;
+    outline: none;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.primary {
+    --color: rgb(0, 165, 165);
+}
+
+.secondary {
+    --color: rgb(170, 21, 51);
+}
+
+.disabled:not(.active) {
+    color: grey;
+}
+
+.base::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--color);
+    content: "";
+    z-index: 0;
+    transition: width 0.1s ease-in;
+}
+
+.base:not(.active):not(.disabled)::after {
+    width: 5px;
+}
+
+.base:not(.active):not(.disabled):hover::after {
+    width: 25px;
+}
+
+.active::after {
+    width: 100%;
+}

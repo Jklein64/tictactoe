@@ -1,0 +1,30 @@
+.container {
+    width: 50%;
+    max-width: 400px;
+    display: grid;
+    margin: 8px 16px;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    grid-template-areas:
+        "player1 player2"
+        "reset   reset  ";
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 8px 32px;
+        width: 75%;
+    }
+}
+
+
+.button:nth-child(1) {
+    grid-area: player1;
+}
+.button:nth-child(2) {
+    grid-area: player2;
+}
+.button:nth-child(3) {
+    grid-area: reset;
+}
