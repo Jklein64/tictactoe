@@ -8,7 +8,7 @@
     "license": "MIT",
     "scripts": {
         "build": "cd client && yarn install && yarn run build",
-        "postinstall": "yarn install --prefix server && yarn install --prefix client",
+        "postinstall": "yarn install --prefix server --ignore-script && yarn install --prefix client --ignore-script",
         "start": "node server"
     }
 }
