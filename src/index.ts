@@ -9,10 +9,10 @@ const app = express()
 const server = createServer(app)
 const wsserver = new ws.Server({ server })
 
-app.use("/", express.static(path.join(__dirname, "../../client/build/")))
+app.use(express.static(path.join(__dirname, "../client/build/")))
 
-app.get("/", (req: any, res: any) => {
-	res.sendFile(path.join(__dirname, "../../client/build/index.html"))
+app.get("*", (req: any, res: any) => {
+	res.sendFile(path.join(__dirname, "../client/build/index.html"))
 })
 
 app.on("upgrade", (request: IncomingMessage, socket: Socket, head: Buffer) => {
