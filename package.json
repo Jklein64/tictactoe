@@ -2,13 +2,12 @@
     "name": "tictactoe",
     "version": "1.0.0",
     "engines": {
-        "node": "13.x",
-        "yarn": "1.x"
+        "node": "13.x"
     },
     "license": "MIT",
     "scripts": {
         "build": "cd client && yarn install && yarn run build",
-        "postinstall": "yarn install --prefix server --ignore-script && yarn install --prefix client --ignore-script",
+        "postinstall": "npm install --prefix server && npm install --prefix client",
         "start": "node server"
     }
 }
