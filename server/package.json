@@ -10,7 +10,7 @@
     "scripts": {
         "start": "node dist/index.js",
         "dev": "nodemon",
-        "build": "tsc"
+        "build": "npx tsc"
     },
     "devDependencies": {
         "@types/ws": "^7.4.0"
