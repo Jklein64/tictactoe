@@ -2,6 +2,7 @@
     "name": "server",
     "version": "1.0.0",
     "license": "MIT",
+    "main": "dist/index.js",
     "dependencies": {
         "express": "^4.17.1",
         "ws": "^7.4.0"
