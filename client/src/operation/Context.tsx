@@ -54,6 +54,10 @@ export default function Context({ children }: BoardContextProps) {
     };
   }, []);
 
+  useEffect(() => {
+    // goal test code here
+  }, [board]);
+
   return (
     <BoardContext.Provider value={[board, setBoard]}>
       <PlayerContext.Provider value={[player, setPlayer]}>
