@@ -22,7 +22,7 @@ export default function Button({
       {...props}
       onClick={(e) => {
         if (props.onClick) props.onClick(e);
-        setActive((p) => !p);
+        else setActive((p) => !p);
       }}
       className={[
         props.className,
