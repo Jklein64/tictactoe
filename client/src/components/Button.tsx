@@ -27,11 +27,13 @@ export default function Button({
       className={[
         props.className,
         styles.base,
-        isActive && styles.active,
-        primary && styles.primary,
-        secondary && styles.secondary,
-        props.disabled && styles.disabled,
-      ].join(' ')}
+        isActive ? styles.active : '',
+        primary ? styles.primary : '',
+        secondary ? styles.secondary : '',
+        props.disabled ? styles.disabled : '',
+      ]
+        .filter((s) => s !== '')
+        .join(' ')}
     >
       <span className={styles.content}>{children}</span>
     </button>

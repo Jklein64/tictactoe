@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Button from '@app/components/Button';
 import styles from './PlayerButtons.module.css';
 import { PlayerState } from '@app/operation/enums';
@@ -14,14 +14,13 @@ export default function PlayerButtons() {
     setPlayer(p);
   };
 
-  const onResetClicked = () => {
-    setReset(true);
-    setPlayer(PlayerState.None);
-    setBoard(new Array(9).fill(TileState.Empty));
-    setTimeout(() => {
-      setReset(false);
-    }, 500);
-  };
+  useEffect(() => {
+    if (reset)
+      setTimeout(() => {
+        setReset(false);
+        setBoard(new Array(9).fill(TileState.Empty));
+      }, 500);
+  }, [reset]);
 
   return (
     <section className={styles.container}>
@@ -43,7 +42,11 @@ export default function PlayerButtons() {
       >
         I am player 2!
       </Button>
-      <Button onClick={onResetClicked} className={styles.button} active={reset}>
+      <Button
+        className={styles.button}
+        active={reset}
+        onClick={() => setReset(true)}
+      >
         Reset
       </Button>
     </section>
