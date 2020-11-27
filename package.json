@@ -1,7 +1,10 @@
 {
-    "name": "server",
+    "name": "tictactoe",
     "version": "1.0.0",
     "license": "MIT",
+    "author": {
+        "name": "Jason Klein"
+    },
     "main": "dist/index.js",
     "dependencies": {
         "express": "^4.17.1",
@@ -11,8 +14,8 @@
         "node": "13.x"
     },
     "scripts": {
-        "start": "node dist/index.js",
-        "heroku-postbuild": "cd client && npm install && npm run build",
+        "start": "node",
+        "heroku-postbuild": "npm install && tsc && cd client && npm install && npm run build",
         "dev": "nodemon",
         "build": "tsc"
     },
