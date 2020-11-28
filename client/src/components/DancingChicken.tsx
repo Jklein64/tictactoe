@@ -23,11 +23,13 @@ export default function DancingChicken() {
 
   return (
     <img
-      style={{
-        '--x': `calc(100vw * ${x})`,
-        '--y': `calc(100vh * ${y})`,
-        '--rotate': `${rot}deg`,
-      }}
+      style={
+        {
+          '--x': `calc(100vw * ${x})`,
+          '--y': `calc(100vh * ${y})`,
+          '--rotate': `${rot}deg`,
+        } as React.CSSProperties
+      }
       className={styles.chicken}
       src="./dancing chicken.gif"
     ></img>
