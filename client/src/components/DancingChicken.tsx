@@ -1,5 +1,5 @@
 import { WinningIndicesContext } from '@app/operation/Context';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { CSSProperties, useContext, useEffect, useState } from 'react';
 
 import styles from './DancingChicken.module.css';
 
@@ -23,13 +23,11 @@ export default function DancingChicken() {
 
   return (
     <img
-      style={
-        {
-          '--x': `calc(100vw * ${x})`,
-          '--y': `calc(100vh * ${y})`,
-          '--rotate': `${rot}deg`,
-        } as React.CSSProperties
-      }
+      style={{
+        ['--x' as any]: `calc(100vw * ${x})`,
+        ['--y' as any]: `calc(100vh * ${y})`,
+        ['--rotate' as any]: `${rot}deg`,
+      }}
       className={styles.chicken}
       src="./dancing chicken.gif"
     ></img>
