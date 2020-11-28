@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
 import { TileState } from '@app/operation/TileState';
-import { BoardContext } from '@app/operation/Context';
-import { PlayerContext } from '@app/operation/Context';
 import { PlayerState } from '@app/operation/enums';
 import Button from '@app/components/Button';
+import {
+  BoardContext,
+  WinningIndicesContext,
+  PlayerContext,
+} from '@app/operation/Context';
+
+import styles from './Tile.module.css';
 
 interface TileProps {
   number: number;
@@ -13,9 +18,11 @@ interface TileProps {
 export default function Tile({ number, state }: TileProps) {
   const [board, setBoard] = useContext(BoardContext) ?? [];
   const [player, _] = useContext(PlayerContext);
+  const winning = useContext(WinningIndicesContext).includes(number);
 
   return (
     <Button
+      className={winning ? styles.winning : ''}
       primary={state === TileState.Player1}
       secondary={state === TileState.Player2}
       onClick={() => {

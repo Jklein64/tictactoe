@@ -1,0 +1,25 @@
+.winning {
+    --angle: 10deg;
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: forward;
+    animation-fill-mode: both;
+    box-shadow: 0 0 4px black;
+    z-index: 10;
+}
+
+@keyframes bounce {
+    0% {
+        transform: rotate(calc(-1 * var(--angle)));
+    }
+
+    50% {
+        transform: rotate(var(--angle));
+    }
+
+    100% {
+        transform: rotate(calc(-1 * var(--angle)));
+    }
+}
