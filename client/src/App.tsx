@@ -6,6 +6,7 @@ import ContextProvider from '@app/operation/Context';
 
 import './App.css';
 import PlayerButtons from './components/PlayerButtons';
+import DancingChicken from './components/DancingChicken';
 
 interface AppProps {}
 
@@ -13,6 +14,7 @@ function App({}: AppProps) {
   return (
     <Page>
       <ContextProvider>
+        <DancingChicken />
         <PlayerButtons />
         <Container>
           {(board) =>

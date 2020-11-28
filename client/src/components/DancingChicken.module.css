@@ -1,0 +1,9 @@
+.chicken {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(var(--x), var(--y)) rotate(var(--rotate));
+    transform-origin: center;
+    transition: all 0.25s ease;
+    z-index: 100;
+}

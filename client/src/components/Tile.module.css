@@ -10,6 +10,7 @@
     z-index: 10;
 }
 
+
 @keyframes bounce {
     0% {
         transform: rotate(calc(-1 * var(--angle)));
